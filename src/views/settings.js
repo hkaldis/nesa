@@ -84,51 +84,6 @@
     return input;
   }
 
-  /* Import each tool's shipped images, but never re-fetch for a tool that
-     already has photos on this device — those may be the owner's own. */
-  function attachPhotos(tools, base) {
-    return tools.reduce(function (chain, tool) {
-      const files = tool.photoFiles || [];
-      if (!files.length) return chain;
-      return chain.then(function () {
-        return store.getTool(tool.id);
-      }).then(function (existing) {
-        if (existing && (existing.photos || []).length) {
-          tool.photos = existing.photos;
-          return null;
-        }
-        return files.reduce(function (inner, file) {
-          return inner.then(function (ids) {
-            return App.photos.addFromUrl(base + file)
-              .then(function (id) { return ids.concat([id]); })
-              .catch(function (err) { console.warn(err.message); return ids; });
-          });
-        }, Promise.resolve([])).then(function (ids) { tool.photos = ids; });
-      });
-    }, Promise.resolve());
-  }
-
-  /* Load a bundle shipped with the app. Records merge by tool id, so importing
-     the same file twice updates those tools instead of duplicating them. */
-  function loadBundle(path, label) {
-    return fetch(path).then(function (response) {
-      if (!response.ok) throw new Error(label + ' not found');
-      return response.json();
-    }).then(function (bundle) {
-      const tools = (bundle.tools || []).map(model.normalize);
-      if (!tools.length) throw new Error(label + ' is empty');
-      // Paths in photoFiles are relative to the bundle, so a bundle can ship
-      // its own images without hard-coding where it lives.
-      const base = path.replace(/[^/]+$/, '');
-      return attachPhotos(tools, base).then(function () {
-        return store.saveTools(tools);
-      }).then(function () {
-        ui.toast(label + ': ' + util.plural(tools.length, 'tool') + ' imported');
-        return App.refresh();
-      }).then(function () { App.navigate('#/inventory'); });
-    }).catch(function (err) { ui.toast(err.message, 'danger'); });
-  }
-
   view.render = function (container) {
     const jsonInput = filePicker('.json,application/json', importJson);
     const csvInput = filePicker('.csv,text/csv', importCsv);
@@ -184,7 +139,7 @@
         h('div.button-row', [
           ui.button('Import my tools', {
             variant: 'primary',
-            onClick: function () { loadBundle('data/my-tools.json', 'My tools'); }
+            onClick: function () { App.bundles.import(App.bundles.MY_TOOLS, 'My tools'); }
           })
         ])
       ]),
@@ -193,7 +148,7 @@
         storageLine,
         h('div.button-row', [
           ui.button('Load sample inventory', {
-            onClick: function () { loadBundle('data/sample-inventory.json', 'Sample inventory'); }
+            onClick: function () { App.bundles.import(App.bundles.SAMPLE, 'Sample inventory'); }
           }),
           ui.button('Delete everything', {
             variant: 'danger',

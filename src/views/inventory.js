@@ -136,10 +136,16 @@
       tools.length ? filterBar(tools) : null,
       !tools.length
         ? ui.empty('No tools yet',
-            'Add your first tool, or load the sample inventory from Settings to see how the app works.',
+            'Your inventory is stored on this device, so a new phone or browser starts empty. Import your tools to fill it.',
             h('div.empty__actions', [
-              ui.button('Add a tool', { variant: 'primary', onClick: function () { App.navigate('#/new'); } }),
-              ui.button('Open settings', { onClick: function () { App.navigate('#/settings'); } })
+              ui.button('Import my tools', {
+                variant: 'primary',
+                onClick: function () { App.bundles.import(App.bundles.MY_TOOLS, 'My tools'); }
+              }),
+              ui.button('Add a tool', { onClick: function () { App.navigate('#/new'); } }),
+              ui.button('Load sample inventory', {
+                onClick: function () { App.bundles.import(App.bundles.SAMPLE, 'Sample inventory'); }
+              })
             ]))
         : !filtered.length
           ? ui.empty('Nothing matches', 'Try clearing the filters.',
