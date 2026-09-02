@@ -76,6 +76,18 @@
     });
   };
 
+  /* Fetch an image that ships with the app and run it through the same resize
+     and storage path as a camera photo. */
+  photos.addFromUrl = function (url) {
+    return fetch(url).then(function (response) {
+      if (!response.ok) throw new Error('Could not load ' + url);
+      return response.blob();
+    }).then(function (blob) {
+      if (!/^image\//.test(blob.type)) throw new Error('Not an image: ' + url);
+      return photos.add(blob);
+    });
+  };
+
   photos.addMany = function (fileList) {
     const files = Array.prototype.slice.call(fileList || []);
     return files.reduce(function (chain, file) {

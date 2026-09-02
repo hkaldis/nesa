@@ -107,6 +107,13 @@ templates ship with the app and you can add your own.
 - **CSV** export/import covers the text fields only — useful for bulk-adding
   tools in a spreadsheet. List columns (`tags`, `capabilities`, `accepts`,
   `fits`) are pipe-separated, e.g. `drive:1/2|shank:hex-1/4`.
+- **Photos** referenced by a bundle live in `data/photos/` and are named in each
+  tool's `photoFiles`, resolved relative to the bundle. They are fetched on
+  import, resized and stored as blobs on the device — not loaded on every page
+  view, and deliberately not precached. The ones committed here are
+  manufacturer/retailer product shots used to identify kit in a personal
+  inventory; replace them with your own photographs if the repository is ever
+  made public-facing in a way that matters.
 - **My tools** (`data/my-tools.json`) is the real inventory kept in the
   repository, so it can be re-imported onto any device or after clearing data.
   Settings → *Import my tools* loads it. Records merge by tool id, so importing

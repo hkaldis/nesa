@@ -96,6 +96,17 @@ function build() {
     copy(path.join(root, file), path.join(dist, file));
   });
 
+  // Photos shipped with the inventory bundle. They are fetched on import, not
+  // on page load, so they are copied but deliberately left out of the precache.
+  const photoDir = path.join(root, 'data', 'photos');
+  let photoCount = 0;
+  if (fs.existsSync(photoDir)) {
+    fs.readdirSync(photoDir).forEach(function (name) {
+      copy(path.join(photoDir, name), path.join(dist, 'data', 'photos', name));
+      photoCount += 1;
+    });
+  }
+
   write('sw.js', serviceWorker([
     './', './index.html', './manifest.webmanifest',
     './' + jsName, './assets/' + cssName, './assets/icon.svg',
@@ -111,6 +122,7 @@ function build() {
   console.log('  ' + jsName + '  ' + kb(jsBytes) + '  from ' + sources.length + ' source files');
   console.log('  assets/' + cssName + '  ' + kb(cssBytes));
   console.log('  sw.js cache: nesa-' + stamp);
+  console.log('  data/photos: ' + photoCount + ' images');
 }
 
 build();

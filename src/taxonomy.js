@@ -18,7 +18,9 @@
       { id: 'drill-press', name: 'Drill Press' },
       { id: 'drill-bit', name: 'Drill Bit', accessory: true },
       { id: 'driver-bit', name: 'Driver Bit', accessory: true },
-      { id: 'hole-saw', name: 'Hole Saw', accessory: true }
+      { id: 'hole-saw', name: 'Hole Saw', accessory: true },
+      { id: 'drill-guide', name: 'Drill Guide / Depth Stop', accessory: true },
+      { id: 'bit-holder', name: 'Bit Holder', accessory: true, adapter: true }
     ] },
     { id: 'fastening', name: 'Fastening & Torque', children: [
       { id: 'ratchet', name: 'Ratchet' },
@@ -60,6 +62,7 @@
       { id: 'level', name: 'Spirit / Laser Level' },
       { id: 'caliper', name: 'Caliper / Micrometer' },
       { id: 'multimeter', name: 'Multimeter' },
+      { id: 'clamp-meter', name: 'Clamp Meter' },
       { id: 'detector', name: 'Stud / Cable Detector' },
       { id: 'marking', name: 'Marking Tool' }
     ] },
@@ -97,7 +100,9 @@
       { id: 'plastering', name: 'Plastering' },
       { id: 'garden', name: 'Garden & Outdoor' },
       { id: 'automotive', name: 'Automotive Specialist' },
-      { id: 'bicycle', name: 'Bicycle' }
+      { id: 'bicycle', name: 'Bicycle' },
+      { id: 'caulk-gun', name: 'Sealant / Caulking Gun' },
+      { id: 'pressure-washer', name: 'Pressure Washer' }
     ] },
     { id: 'site', name: 'Site & Safety', children: [
       { id: 'ppe', name: 'PPE' },
@@ -106,6 +111,12 @@
       { id: 'storage', name: 'Storage / Tool Box' },
       { id: 'consumable', name: 'Consumable', accessory: true },
       { id: 'other', name: 'Other' }
+    ] },
+    { id: 'outdoor', name: 'Outdoor & Camping', children: [
+      { id: 'axe', name: 'Axe / Hatchet' },
+      { id: 'shovel', name: 'Spade / Shovel' },
+      { id: 'flashlight', name: 'Torch / Flashlight' },
+      { id: 'camp-tool', name: 'Camping Tool' }
     ] }
   ];
 
@@ -256,7 +267,11 @@
     { id: 'protect-self', name: 'Personal protection' },
     { id: 'work-at-height', name: 'Work at height' },
     { id: 'mix-material', name: 'Mix material' },
-    { id: 'heat-material', name: 'Heat / strip' }
+    { id: 'heat-material', name: 'Heat / strip' },
+    { id: 'dig-earth', name: 'Dig' },
+    { id: 'chop-split', name: 'Chop & split wood' },
+    { id: 'carve', name: 'Carve / whittle' },
+    { id: 'wash-clean', name: 'Pressure wash' }
   ];
 
   /* Sensible capability defaults per category, applied when you add a tool so
@@ -313,7 +328,14 @@
     garden: ['cut-wood-curve'],
     ppe: ['protect-self'],
     lighting: ['light-work'],
-    vacuum: ['extract-dust']
+    vacuum: ['extract-dust'],
+    axe: ['chop-split', 'strike'],
+    shovel: ['dig-earth'],
+    flashlight: ['light-work'],
+    'clamp-meter': ['measure-electrical'],
+    'caulk-gun': ['seal-apply'],
+    'pressure-washer': ['wash-clean'],
+    'camp-tool': []
   };
 
   /* ------------------------------------------------------------ size series */
@@ -407,6 +429,15 @@
       { label: 'Caulking gun', capability: 'seal-apply' },
       { label: 'Dust sheets', category: 'consumable' },
       { label: 'Heat gun / stripper', capability: 'heat-material' }
+    ] },
+    { id: 'bushcraft', name: 'Outdoor & bushcraft', items: [
+      { label: 'Axe or hatchet', capability: 'chop-split' },
+      { label: 'Fixed-blade knife', category: 'knife' },
+      { label: 'Folding spade', capability: 'dig-earth' },
+      { label: 'Head torch or flashlight', capability: 'light-work' },
+      { label: 'Folding saw', capability: 'cut-wood-straight' },
+      { label: 'Sharpening stone', category: 'abrasive' },
+      { label: 'First aid kit', category: 'ppe' }
     ] },
     { id: 'garden', name: 'Garden & outdoor', items: [
       { label: 'Secateurs / loppers', category: 'garden' },

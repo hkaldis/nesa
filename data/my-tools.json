@@ -1,7 +1,7 @@
 {
   "format": "nesa-tools",
   "version": 1,
-  "description": "Personal inventory. Imported from Settings; merges by tool id, so importing again updates these records rather than duplicating them.",
+  "description": "Personal inventory. Imported from Settings; merges by tool id, so importing again updates these records rather than duplicating them. photoFiles are resolved relative to this file.",
   "tools": [
     {
       "status": "owned",
@@ -169,6 +169,542 @@
       "modelNumber": "M12 FCOT-0",
       "category": "angle-grinder",
       "platform": "milwaukee-m12"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "outdoor",
+        "bushcraft"
+      ],
+      "capabilities": [
+        "dig-earth",
+        "cut-wood-curve"
+      ],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "Folding spade with serrated edge. 1065 g, 23.5 cm folded / 60 cm extended, 15.3 cm wide. Carbon steel blade, aluminium and nylon handle.",
+      "id": "gerber-etool",
+      "name": "E-Tool folding spade (serrated)",
+      "brand": "Gerber",
+      "modelNumber": "30-000075",
+      "category": "shovel",
+      "photoFiles": [
+        "photos/gerber-etool.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "cordless",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "edc",
+        "rechargeable"
+      ],
+      "capabilities": [
+        "light-work"
+      ],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "8000 lumens, 420 m throw. Built-in 8000 mAh li-ion, 18 W USB-C charging (~2 h full). Runtime 30 h low / 190 h ultralow. OLED display. Stainless steel, IP54, 199 g.",
+      "id": "nitecore-edc37",
+      "name": "EDC37 flashlight 8000 lumens",
+      "brand": "Nitecore",
+      "modelNumber": "EDC37",
+      "category": "flashlight",
+      "photoFiles": [
+        "photos/nitecore-edc37.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "outdoor",
+        "bushcraft",
+        "premium"
+      ],
+      "capabilities": [
+        "chop-split",
+        "strike"
+      ],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "Premium collection mini hatchet. 24.2 cm total, 730 g (500 g head). Hickory handle, Swedish axe steel. Leather sheath included.",
+      "id": "hultafors-agelsjon",
+      "name": "Ågelsjön Mini 0.5 trekking axe",
+      "brand": "Hultafors",
+      "modelNumber": "841760",
+      "category": "axe",
+      "photoFiles": [
+        "photos/hultafors-agelsjon.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "outdoor",
+        "bushcraft",
+        "premium"
+      ],
+      "capabilities": [
+        "chop-split",
+        "strike"
+      ],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "38.5 cm total, 805 g (500 g head), 7.2 cm edge. Hickory handle, carbon steel head. Leather sheath, supplied sharpened.",
+      "id": "hultafors-hultan",
+      "name": "Hultån 0.5 Premium trekking axe",
+      "brand": "Hultafors",
+      "modelNumber": "841701",
+      "category": "axe",
+      "photoFiles": [
+        "photos/hultafors-hultan.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "outdoor",
+        "bushcraft",
+        "edc"
+      ],
+      "capabilities": [
+        "carve",
+        "cut-wood-curve"
+      ],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "Knivesandtools Exclusive, art. LI-M4-MC-CF. CPM MagnaCut at 62 HRC, carbon fibre handle. Blade 9.2 cm, total 20.5 cm, 4 mm stock, 180 g. Drop point, flat grind. Leather belt sheath.",
+      "id": "lionsteel-m4",
+      "name": "M4 Carbon Fiber MagnaCut fixed knife",
+      "brand": "LionSteel",
+      "modelNumber": "M4-MC-CF",
+      "category": "knife",
+      "photoFiles": [
+        "photos/lionsteel-m4.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 3,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "accessory"
+      ],
+      "capabilities": [],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "Depth stops for Ø 6, 8 and 10 mm drill bits, plus a 3 mm Allen key. Zinc die-cast, titanium finish. Clamps to the bit to set drilling depth.",
+      "id": "wolfcraft-depthstop",
+      "name": "Universal depth stop set, 3 pcs",
+      "brand": "Wolfcraft",
+      "modelNumber": "2755000",
+      "category": "drill-guide",
+      "sizeRange": "6-10mm",
+      "photoFiles": [
+        "photos/wolfcraft-depthstop.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "accessory",
+        "pocket-hole"
+      ],
+      "capabilities": [],
+      "accepts": [],
+      "fits": [
+        "chuck:13mm",
+        "shank:round"
+      ],
+      "location": "",
+      "notes": "Micro-pocket drill bit, 19/64\" (7 mm), with stop collar and hex wrench. Makes pocket holes ~25% smaller than standard — for 12 mm stock and narrow pieces. Kreg's own codes vary (KPHA540 / KJD-MICROBIT); check yours against the packaging.",
+      "id": "kreg-microbit",
+      "name": "Micro-Pocket drill bit with stop collar",
+      "brand": "Kreg",
+      "modelNumber": "KJSC-MICROBIT",
+      "category": "drill-guide",
+      "photoFiles": [
+        "photos/kreg-microbit.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 3,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "accessory"
+      ],
+      "capabilities": [],
+      "accepts": [],
+      "fits": [
+        "shank:hex-1/4"
+      ],
+      "location": "",
+      "notes": "Three titanium-coated HSS conical step bits with 1/4\" hex shanks, for sheet metal, wood and plastic. Typical set covers roughly 4-12, 4-20 and 3-12 mm — measure yours and correct the range if it differs.",
+      "id": "pasco-stepdrills",
+      "name": "Step drill set, 3 pcs titanium HSS",
+      "brand": "Pasco",
+      "category": "drill-bit",
+      "sizeRange": "4-20mm"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 32,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "milwaukee",
+        "shockwave",
+        "accessory"
+      ],
+      "capabilities": [],
+      "accepts": [],
+      "fits": [
+        "shank:hex-1/4"
+      ],
+      "location": "",
+      "notes": "Impact-rated insert bits, mostly Torx TX10-TX50 plus security variants, with a 73 mm locking bit holder and case.",
+      "id": "mw-bits32",
+      "name": "Shockwave bit set, 32 pcs (Torx / hex)",
+      "brand": "Milwaukee",
+      "modelNumber": "4932471586",
+      "category": "driver-bit",
+      "photoFiles": [
+        "photos/mw-bits32.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "milwaukee",
+        "shockwave",
+        "accessory"
+      ],
+      "capabilities": [],
+      "accepts": [
+        "shank:hex-1/4"
+      ],
+      "fits": [
+        "shank:hex-1/4"
+      ],
+      "location": "",
+      "notes": "Impact-duty magnetic holder for 1/4\" hex insert bits.",
+      "id": "mw-bitholder",
+      "name": "Shockwave magnetic bit holder",
+      "brand": "Milwaukee",
+      "modelNumber": "4932352320",
+      "category": "bit-holder",
+      "photoFiles": [
+        "photos/mw-bitholder.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 3,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "milwaukee",
+        "shockwave",
+        "accessory"
+      ],
+      "capabilities": [],
+      "accepts": [
+        "drive:1/4",
+        "drive:3/8",
+        "drive:1/2"
+      ],
+      "fits": [
+        "shank:hex-1/4"
+      ],
+      "location": "",
+      "notes": "1/4\" hex shank to 1/4\", 3/8\" and 1/2\" square drive. Lets an impact driver run sockets.",
+      "id": "mw-hex-adapters",
+      "name": "Shockwave socket adapter set, 3 pcs",
+      "brand": "Milwaukee",
+      "category": "drive-adapter"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 13,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "milwaukee",
+        "shockwave",
+        "impact"
+      ],
+      "capabilities": [],
+      "accepts": [],
+      "fits": [
+        "drive:1/2"
+      ],
+      "location": "",
+      "notes": "Metric impact sockets, 1/2\" square drive. Recorded as 12-24 mm from Milwaukee's 13-piece metric set — check the actual sizes on yours and correct the range, the gap finder reads it.",
+      "id": "mw-sockets13",
+      "name": "Shockwave impact sockets 1/2\", 13 pcs",
+      "brand": "Milwaukee",
+      "category": "socket",
+      "sizeRange": "12-24mm"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "cordless",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "bosch"
+      ],
+      "capabilities": [
+        "drive-screws"
+      ],
+      "accepts": [
+        "shank:hex-1/4"
+      ],
+      "fits": [],
+      "location": "",
+      "notes": "3.6 V with integrated battery (not a swappable platform). 5 Nm max, 7 torque settings, 306-396 rpm, 1/4\" hex holder, max screw Ø 5 mm, 320 g.",
+      "id": "bosch-go3",
+      "name": "Go (Gen 3) cordless screwdriver 3.6V",
+      "brand": "Bosch",
+      "modelNumber": "06019H2200",
+      "category": "screwdriver",
+      "photoFiles": [
+        "photos/bosch-go3.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "electrical"
+      ],
+      "capabilities": [
+        "measure-electrical"
+      ],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "True RMS mini clamp meter. AC/DC current 2/20/100 A, voltage to 600 V, resistance, capacitance, continuity, NCV. 17 mm jaw, 2000 counts, 2x AAA, 170 g.",
+      "id": "unit-ut210e",
+      "name": "UT210E clamp meter, True RMS",
+      "brand": "Uni-T",
+      "modelNumber": "UT210E",
+      "category": "clamp-meter",
+      "photoFiles": [
+        "photos/unit-ut210e.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "electrical"
+      ],
+      "capabilities": [
+        "measure-electrical"
+      ],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "6000 counts, 0.3% basic accuracy, 5 readings/sec. 600 V AC/DC, 10 A, 60 MΩ, capacitance to 10 mF, temperature -40 to 400 °C, NCV. CAT III 600 V / CAT II 1 kV. 334 g.",
+      "id": "brymen-bm235",
+      "name": "BM235 digital multimeter, True RMS",
+      "brand": "Brymen",
+      "modelNumber": "BM235",
+      "category": "multimeter",
+      "photoFiles": [
+        "photos/brymen-bm235.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "bosch"
+      ],
+      "capabilities": [
+        "measure-level",
+        "measure-length"
+      ],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "All-in-one line laser with a removable 2 m tape measure, for hanging pictures, shelves and mirrors. Levels at 0/90/180/270°, accuracy ±0.3°. Your listing states a green beam and 1.7 m working range; Bosch's own sheets list 2.2 m and a 630-650 nm (red) diode, so check which version you have.",
+      "id": "bosch-atino",
+      "name": "Atino line laser with tape measure",
+      "brand": "Bosch",
+      "modelNumber": "Atino",
+      "category": "level"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "bosch",
+        "professional"
+      ],
+      "capabilities": [
+        "detect-hidden"
+      ],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "Multi-detector for magnetic metal, non-magnetic metal, live cables and wooden studs. Depths up to 120 mm non-magnetic metal, 100 mm magnetic metal, 50 mm live cable, 30 mm wood. IP54.",
+      "id": "bosch-gms120",
+      "name": "GMS 120-27 Professional detector",
+      "brand": "Bosch",
+      "modelNumber": "0601081700",
+      "category": "detector",
+      "photoFiles": [
+        "photos/bosch-gms120.jpg"
+      ]
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "milwaukee",
+        "ppe"
+      ],
+      "capabilities": [
+        "protect-self"
+      ],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "Wraparound safety frames worn over prescription glasses. Polycarbonate, anti-scratch and anti-fog. EN166 / EN170 / EN172.",
+      "id": "mw-glasses",
+      "name": "Safety over-glasses, clear",
+      "brand": "Milwaukee",
+      "modelNumber": "4932493439",
+      "category": "ppe"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "manual",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "decorating"
+      ],
+      "capabilities": [
+        "seal-apply"
+      ],
+      "accepts": [],
+      "fits": [],
+      "location": "",
+      "notes": "Open-back skeleton gun for 310 ml cartridges. 180 kg thrust, adjustable grip width, 360° rotating cradle, automatic drip stop, ladder hook.",
+      "id": "wolfcraft-mg400",
+      "name": "MG 400 cartridge / silicone gun",
+      "brand": "Wolfcraft",
+      "modelNumber": "4354000",
+      "category": "caulk-gun"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "corded",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "bosch",
+        "garden"
+      ],
+      "capabilities": [
+        "wash-clean"
+      ],
+      "accepts": [
+        "mains:230v"
+      ],
+      "fits": [],
+      "location": "",
+      "notes": "135 bar max, 410 l/h, 1900 W. 7 m hose, 5 m cable, 450 ml detergent bottle, max inlet 40 °C. 7.9 kg.",
+      "id": "bosch-aquatak135",
+      "name": "UniversalAquatak 135 pressure washer",
+      "brand": "Bosch",
+      "modelNumber": "06008A7C00",
+      "category": "pressure-washer",
+      "photoFiles": [
+        "photos/bosch-aquatak135.jpg"
+      ]
     }
   ]
 }
