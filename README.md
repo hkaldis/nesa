@@ -15,23 +15,43 @@ server and no network call. Photos included.
 
 ## Running it
 
-It is a static site with no build step, but it does need to be *served* (browsers
-block storage and modules on `file://`):
+Development is buildless. Serve the repository root with anything and reload as
+you edit — browsers block storage on `file://`, so it does need a server:
 
 ```sh
-python3 -m http.server 8000
+npm run dev          # or: python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
-To use it properly, publish it once and install it to your phone:
+## Deploying
 
-1. **Settings → Pages** in this repository, source *Deploy from a branch*,
-   branch `main`, folder `/ (root)`.
-2. Open the published URL on your phone and choose *Add to Home Screen*.
+`node build.js` (or `npm run build`) writes a deployable copy to `dist/`:
+seventeen source files concatenated into one content-hashed bundle, hashed CSS,
+and a service worker whose cache name carries the same hash. There is no
+minification and no dependencies — every source file is an IIFE, so
+concatenation is the whole transform and the deployed code stays readable.
 
-It then runs offline as a normal app — which is the point, since workshops and
-garages rarely have signal. Note that each browser and device keeps its own
-copy of the data; use the backup file in Settings to move between them.
+```sh
+npm run preview      # build, then serve dist/ on http://localhost:8001
+```
+
+Pushing to `main` builds and publishes to GitHub Pages via
+`.github/workflows/pages.yml`. Enable it once under **Settings → Pages →
+Source: GitHub Actions**. `dist/` is generated and not committed.
+
+Then open the published URL on your phone and choose *Add to Home Screen*. It
+runs offline from there, which is the point — workshops and garages rarely have
+signal. Each browser and device keeps its own copy of the data; use the backup
+file in Settings to move between them.
+
+### How updates reach an installed copy
+
+The service worker is network-first for page loads and cache-first for
+everything else. Assets have content-hashed filenames so they can never go
+stale, but the HTML that names them has to stay fresh — served from cache, an
+installed copy would keep loading the old bundle forever. Offline, the cached
+shell takes over and the app works exactly as before. Activating a new worker
+deletes the previous build's cache, so old bundles do not accumulate.
 
 ## How compatibility works
 
@@ -91,7 +111,8 @@ few hundred tools stay well inside a browser's storage quota.
 ## Layout
 
 ```
-index.html              app shell and script order
+index.html              app shell and script order (the build reads it)
+build.js                bundles and hashes into dist/ for deployment
 assets/styles.css       all styling, light and dark
 src/taxonomy.js         categories, connections, capabilities, kits, job templates
 src/model.js            tool record: defaults, normalisation, search, CSV

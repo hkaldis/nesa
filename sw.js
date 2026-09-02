@@ -1,5 +1,10 @@
-/* Offline shell. Cache-first for app files so the inventory works in a garage
-   with no signal; the cache name is bumped on release to force an update. */
+/* Offline shell, so the inventory works in a garage with no signal.
+
+   Navigations are network-first and everything else is cache-first: the build
+   gives assets content-hashed names, so those can never go stale, while the
+   HTML that points at them must stay fresh or an installed copy would never
+   see an update. The cache name carries the build hash, so activating a new
+   worker drops the previous build's files. */
 const CACHE = 'nesa-v1';
 const ASSETS = [
   './', './index.html', './manifest.webmanifest',
@@ -29,18 +34,38 @@ self.addEventListener('activate', function (event) {
 });
 
 self.addEventListener('fetch', function (event) {
-  if (event.request.method !== 'GET') return;
-  event.respondWith(
-    caches.match(event.request).then(function (hit) {
-      return hit || fetch(event.request).then(function (response) {
-        // Keep the cache warm for same-origin files fetched after install.
-        if (response.ok && new URL(event.request.url).origin === self.location.origin) {
-          const copy = response.clone();
-          caches.open(CACHE).then(function (cache) { cache.put(event.request, copy); });
-        }
+  const request = event.request;
+  if (request.method !== 'GET') return;
+  if (new URL(request.url).origin !== self.location.origin) return;
+
+  // Navigations go to the network first. The page names a content-hashed
+  // bundle, so serving a stale index.html would pin an installed copy to an old
+  // version forever; the cached shell is the offline fallback, not the default.
+  if (request.mode === 'navigate') {
+    event.respondWith(
+      fetch(request).then(function (response) {
+        const copy = response.clone();
+        caches.open(CACHE).then(function (cache) { cache.put('./index.html', copy); });
         return response;
       }).catch(function () {
-        return caches.match('./index.html');
+        return caches.match('./index.html').then(function (hit) {
+          return hit || caches.match('./');
+        });
+      })
+    );
+    return;
+  }
+
+  // Everything else is either content-hashed or static, so cache-first is safe
+  // and keeps the app instant offline.
+  event.respondWith(
+    caches.match(request).then(function (hit) {
+      return hit || fetch(request).then(function (response) {
+        if (response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE).then(function (cache) { cache.put(request, copy); });
+        }
+        return response;
       });
     })
   );

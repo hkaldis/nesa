@@ -147,7 +147,10 @@
     });
 
     if ('serviceWorker' in navigator && window.location.protocol.indexOf('http') === 0) {
-      navigator.serviceWorker.register('sw.js').catch(function () { /* offline support is optional */ });
+      // updateViaCache:'none' keeps the worker script itself out of the HTTP
+      // cache, so a redeploy is noticed on the next load rather than eventually.
+      navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' })
+        .catch(function () { /* offline support is optional */ });
     }
   }
 
