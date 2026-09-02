@@ -84,17 +84,19 @@
     return input;
   }
 
-  function loadSample() {
-    return fetch('data/sample-inventory.json').then(function (response) {
-      if (!response.ok) throw new Error('Sample data not found');
+  /* Load a bundle shipped with the app. Records merge by tool id, so importing
+     the same file twice updates those tools instead of duplicating them. */
+  function loadBundle(path, label) {
+    return fetch(path).then(function (response) {
+      if (!response.ok) throw new Error(label + ' not found');
       return response.json();
     }).then(function (bundle) {
-      return store.saveTools((bundle.tools || []).map(model.normalize));
-    }).then(function () {
-      ui.toast('Sample inventory loaded');
-      return App.refresh();
-    }).then(function () {
-      App.navigate('#/inventory');
+      const tools = (bundle.tools || []).map(model.normalize);
+      if (!tools.length) throw new Error(label + ' is empty');
+      return store.saveTools(tools).then(function () {
+        ui.toast(label + ': ' + util.plural(tools.length, 'tool') + ' imported');
+        return App.refresh();
+      }).then(function () { App.navigate('#/inventory'); });
     }).catch(function (err) { ui.toast(err.message, 'danger'); });
   }
 
@@ -148,10 +150,22 @@
         ])
       ]),
 
+      ui.section('My tools', [
+        h('p.section__text', { text: 'Tools kept in the repository as a file, so they can be re-imported onto any device or after clearing data. Importing merges by tool id: it updates these records rather than duplicating them, but it will also overwrite edits you made to them here.' }),
+        h('div.button-row', [
+          ui.button('Import my tools', {
+            variant: 'primary',
+            onClick: function () { loadBundle('data/my-tools.json', 'My tools'); }
+          })
+        ])
+      ]),
+
       ui.section('Storage', [
         storageLine,
         h('div.button-row', [
-          ui.button('Load sample inventory', { onClick: loadSample }),
+          ui.button('Load sample inventory', {
+            onClick: function () { loadBundle('data/sample-inventory.json', 'Sample inventory'); }
+          }),
           ui.button('Delete everything', {
             variant: 'danger',
             onClick: function () {

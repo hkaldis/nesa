@@ -107,6 +107,11 @@ templates ship with the app and you can add your own.
 - **CSV** export/import covers the text fields only — useful for bulk-adding
   tools in a spreadsheet. List columns (`tags`, `capabilities`, `accepts`,
   `fits`) are pipe-separated, e.g. `drive:1/2|shank:hex-1/4`.
+- **My tools** (`data/my-tools.json`) is the real inventory kept in the
+  repository, so it can be re-imported onto any device or after clearing data.
+  Settings → *Import my tools* loads it. Records merge by tool id, so importing
+  again updates them rather than duplicating — but it also overwrites edits made
+  on the device, so treat the file as the source of truth for what it contains.
 - **Sample inventory** (Settings) loads a realistic 46-tool workshop with
   deliberate gaps, to see the analysis working before entering your own.
 
@@ -130,7 +135,7 @@ src/ui.js               shared UI atoms
 src/views/              one file per screen
 src/app.js              state and hash router
 sw.js                   offline cache
-data/                   sample inventory
+data/                   sample inventory and my-tools.json
 ```
 
 Vanilla JavaScript, no dependencies, no build step. Editing a file and reloading

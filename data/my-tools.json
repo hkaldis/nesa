@@ -1,0 +1,174 @@
+{
+  "format": "nesa-tools",
+  "version": 1,
+  "description": "Personal inventory. Imported from Settings; merges by tool id, so importing again updates these records rather than duplicating them.",
+  "tools": [
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "cordless",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "milwaukee",
+        "fuel",
+        "brushless"
+      ],
+      "capabilities": [
+        "cut-wood-curve",
+        "cut-wood-straight",
+        "cut-metal"
+      ],
+      "accepts": [
+        "battery:milwaukee-m18",
+        "sawblade:jigsaw-t"
+      ],
+      "fits": [],
+      "location": "",
+      "notes": "Art. 4933500555. Suffix -0X = bare tool in case, no battery included.",
+      "id": "mw-fbjs",
+      "name": "M18 FUEL jigsaw (barrel grip)",
+      "brand": "Milwaukee",
+      "modelNumber": "M18 FBJS-0X",
+      "category": "jigsaw",
+      "platform": "milwaukee-m18"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "cordless",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "milwaukee",
+        "fuel",
+        "brushless"
+      ],
+      "capabilities": [
+        "drill-wood",
+        "drill-metal",
+        "drill-masonry",
+        "drive-screws"
+      ],
+      "accepts": [
+        "battery:milwaukee-m18",
+        "chuck:13mm",
+        "shank:round",
+        "shank:hex-1/4"
+      ],
+      "fits": [],
+      "location": "",
+      "notes": "Art. 4933479860 / 3990387. Suffix -502X = kit with 2 x 5.0Ah batteries, charger and case (recorded as separate items).",
+      "id": "mw-fpd3",
+      "name": "M18 FUEL combi drill (percussion)",
+      "brand": "Milwaukee",
+      "modelNumber": "M18 FPD3-502X",
+      "category": "hammer-drill",
+      "platform": "milwaukee-m18"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "cordless",
+      "quantity": 2,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "milwaukee"
+      ],
+      "capabilities": [],
+      "accepts": [],
+      "fits": [
+        "battery:milwaukee-m18"
+      ],
+      "location": "",
+      "notes": "Supplied with the M18 FPD3-502X kit.",
+      "id": "mw-fpd3-batteries",
+      "name": "M18 B5 battery 5.0Ah",
+      "brand": "Milwaukee",
+      "modelNumber": "M18 B5",
+      "category": "battery",
+      "platform": "milwaukee-m18"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "corded",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "milwaukee"
+      ],
+      "capabilities": [],
+      "accepts": [
+        "mains:230v"
+      ],
+      "fits": [
+        "battery:milwaukee-m18"
+      ],
+      "location": "",
+      "notes": "Supplied with the M18 FPD3-502X kit. If it is an M12-18 dual charger, edit it and add Milwaukee M12 to its Fits list — that is what tells the app your M12 platform has a charger.",
+      "id": "mw-fpd3-charger",
+      "name": "Charger (M18 kit)",
+      "brand": "Milwaukee",
+      "category": "charger"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "cordless",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "milwaukee"
+      ],
+      "capabilities": [],
+      "accepts": [],
+      "fits": [
+        "battery:milwaukee-m12"
+      ],
+      "location": "",
+      "notes": "Art. 4932451395 / 3900800.",
+      "id": "mw-m12b6",
+      "name": "M12 B6 battery 6.0Ah",
+      "brand": "Milwaukee",
+      "modelNumber": "M12B6",
+      "category": "battery",
+      "platform": "milwaukee-m12"
+    },
+    {
+      "status": "owned",
+      "condition": "new",
+      "powerSource": "cordless",
+      "quantity": 1,
+      "currency": "EUR",
+      "photos": [],
+      "tags": [
+        "milwaukee",
+        "fuel",
+        "brushless"
+      ],
+      "capabilities": [
+        "cut-metal",
+        "cut-masonry"
+      ],
+      "accepts": [
+        "battery:milwaukee-m12",
+        "disc:76mm"
+      ],
+      "fits": [],
+      "location": "",
+      "notes": "Art. 4933464618 / 3902787. Suffix -0 = bare tool, no battery included. Takes 76 mm (3\") cutting discs.",
+      "id": "mw-fcot",
+      "name": "M12 FUEL cut-off tool 76 mm",
+      "brand": "Milwaukee",
+      "modelNumber": "M12 FCOT-0",
+      "category": "angle-grinder",
+      "platform": "milwaukee-m12"
+    }
+  ]
+}

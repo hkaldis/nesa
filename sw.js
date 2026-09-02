@@ -13,7 +13,7 @@ const ASSETS = [
   './src/compat.js', './src/jobs.js', './src/gaps.js', './src/photos.js', './src/ui.js',
   './src/views/inventory.js', './src/views/tool-form.js', './src/views/tool-detail.js',
   './src/views/jobs.js', './src/views/compat.js', './src/views/gaps.js', './src/views/settings.js',
-  './src/app.js', './data/sample-inventory.json'
+  './src/app.js', './data/sample-inventory.json', './data/my-tools.json'
 ];
 
 self.addEventListener('install', function (event) {
