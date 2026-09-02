@@ -41,11 +41,26 @@ jobs:
           grep -q "$bundle" dist/sw.js
           echo "Verified $bundle is wired into index.html and sw.js"
 
-      # enablement turns Pages on via the API on the first run, so going live
-      # does not depend on someone flipping a switch in repository settings.
-      - uses: actions/configure-pages@v5
+      # enablement asks the API to turn Pages on. It succeeds only where the
+      # workflow token is allowed to administer Pages, which it usually is not,
+      # so the first run may still need the one-time switch in settings. The
+      # step below turns that failure into an instruction instead of an
+      # HttpError. Once Pages is on, this step just reads the existing config.
+      - id: pages
+        uses: actions/configure-pages@v5
         with:
           enablement: true
+
+      - name: Explain an unenabled Pages site
+        if: failure() && steps.pages.outcome == 'failure'
+        run: |
+          echo "::error title=GitHub Pages is not enabled::Enable it once, then re-run this workflow."
+          echo "Settings -> Pages -> Build and deployment -> Source: GitHub Actions"
+          echo "https://github.com/${{ github.repository }}/settings/pages"
+          echo
+          echo "The workflow token cannot create the Pages site itself"
+          echo "(Resource not accessible by integration), so this is a one-time"
+          echo "manual step. Everything after it is automatic."
 
       - uses: actions/upload-pages-artifact@v3
         with:

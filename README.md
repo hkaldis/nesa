@@ -36,8 +36,13 @@ npm run preview      # build, then serve dist/ on http://localhost:8001
 ```
 
 Pushing to `main` builds and publishes to GitHub Pages via
-`.github/workflows/pages.yml`. Enable it once under **Settings → Pages →
-Source: GitHub Actions**. `dist/` is generated and not committed.
+`.github/workflows/pages.yml`. `dist/` is generated and not committed.
+
+Pages has to be switched on once by hand, under **Settings → Pages → Build and
+deployment → Source: GitHub Actions**. The workflow asks the API to enable it,
+but the token it runs with is not allowed to create a Pages site, so the first
+run fails with an instruction until the switch is flipped. Every deploy after
+that is automatic.
 
 Then open the published URL on your phone and choose *Add to Home Screen*. It
 runs offline from there, which is the point — workshops and garages rarely have
