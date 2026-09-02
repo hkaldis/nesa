@@ -92,7 +92,7 @@ function build() {
   write('index.html', page);
 
   ['assets/icon.svg', 'manifest.webmanifest',
-   'data/sample-inventory.json', 'data/my-tools.json'].forEach(function (file) {
+   'data/my-tools.json'].forEach(function (file) {
     copy(path.join(root, file), path.join(dist, file));
   });
 
@@ -110,7 +110,7 @@ function build() {
   write('sw.js', serviceWorker([
     './', './index.html', './manifest.webmanifest',
     './' + jsName, './assets/' + cssName, './assets/icon.svg',
-    './data/sample-inventory.json', './data/my-tools.json'
+    './data/my-tools.json'
   ], 'nesa-' + stamp));
 
   // Pages would otherwise run the output through Jekyll, which drops files and

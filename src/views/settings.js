@@ -1,4 +1,4 @@
-/* Settings: backup, restore, import, sample data, storage. */
+/* Settings: backup, restore, import, storage. */
 (function (App) {
   'use strict';
 
@@ -147,9 +147,6 @@
       ui.section('Storage', [
         storageLine,
         h('div.button-row', [
-          ui.button('Load sample inventory', {
-            onClick: function () { App.bundles.import(App.bundles.SAMPLE, 'Sample inventory'); }
-          }),
           ui.button('Delete everything', {
             variant: 'danger',
             onClick: function () {

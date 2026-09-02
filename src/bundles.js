@@ -1,5 +1,5 @@
-/* Importing a bundle that ships with the app (the personal inventory, or the
-   sample one). Shared by the Settings screen and the empty inventory screen.
+/* Importing the inventory bundle that ships with the app. Shared by the
+   Settings screen and the empty inventory screen.
 
    Tools are saved before any photo is fetched: on a phone the images are by far
    the slowest part, and waiting on them made the whole import look like it had
@@ -87,7 +87,21 @@
   };
 
   bundles.MY_TOOLS = 'data/my-tools.json';
-  bundles.SAMPLE = 'data/sample-inventory.json';
+
+  /* The app once shipped a demo inventory, and loading it was one tap away from
+     importing the real one. It is gone; this clears any of its records left on
+     a device. Sample tools all carry a `sample-` id, so nothing else matches. */
+  bundles.purgeSamples = function () {
+    return store.allTools().then(function (tools) {
+      const samples = tools.filter(function (tool) {
+        return String(tool.id).indexOf('sample-') === 0;
+      });
+      if (!samples.length) return 0;
+      return samples.reduce(function (chain, tool) {
+        return chain.then(function () { return store.deleteTool(tool.id); });
+      }, Promise.resolve()).then(function () { return samples.length; });
+    });
+  };
 
   App.bundles = bundles;
 })(window.App = window.App || {});

@@ -142,10 +142,7 @@
                 variant: 'primary',
                 onClick: function () { App.bundles.import(App.bundles.MY_TOOLS, 'My tools'); }
               }),
-              ui.button('Add a tool', { onClick: function () { App.navigate('#/new'); } }),
-              ui.button('Load sample inventory', {
-                onClick: function () { App.bundles.import(App.bundles.SAMPLE, 'Sample inventory'); }
-              })
+              ui.button('Add a tool', { onClick: function () { App.navigate('#/new'); } })
             ]))
         : !filtered.length
           ? ui.empty('Nothing matches', 'Try clearing the filters.',

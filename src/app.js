@@ -140,7 +140,13 @@
 
     App.store.getSetting('ui', {}).then(function (ui) {
       if (ui && ui.layout) App.state.layout = ui.layout;
-      return App.refresh();
+      return App.bundles.purgeSamples();
+    }).then(function (removed) {
+      return App.refresh().then(function () {
+        if (removed) {
+          App.ui.toast('Removed ' + util.plural(removed, 'demo tool') + ' from the old sample inventory');
+        }
+      });
     }).catch(function (err) {
       console.error(err);
       App.render();
