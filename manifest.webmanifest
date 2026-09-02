@@ -1,0 +1,14 @@
+{
+  "name": "Nesa — Tool Inventory",
+  "short_name": "Nesa",
+  "description": "A local-first inventory of your tools: what you own, what it fits, and what is missing.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#131619",
+  "theme_color": "#161a1d",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
