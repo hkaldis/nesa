@@ -43,7 +43,7 @@
   model.normalize = function (input) {
     const tool = Object.assign(model.blankTool(), input || {});
     tool.id = tool.id || util.uid();
-    ['tags', 'capabilities', 'accepts', 'fits', 'photos'].forEach(function (key) {
+    ['tags', 'capabilities', 'accepts', 'fits', 'photos', 'sizes'].forEach(function (key) {
       if (!Array.isArray(tool[key])) {
         tool[key] = typeof tool[key] === 'string' && tool[key]
           ? tool[key].split(/[,;]/).map(function (s) { return s.trim(); }).filter(Boolean)
@@ -56,6 +56,8 @@
     tool.brand = String(tool.brand || '').trim();
     if (!tool.name) tool.name = [tool.brand, tax.categoryName(tool.category)].filter(Boolean).join(' ') || 'Untitled tool';
     tool.parsedSize = util.parseSize(tool.size);
+    // An itemised set: the sizes it actually contains, gaps and all.
+    tool.parsedSizes = (tool.sizes || []).map(util.parseSize).filter(Boolean);
     return tool;
   };
 
@@ -143,7 +145,7 @@
   model.searchText = function (tool) {
     return [
       tool.name, tool.brand, tool.modelNumber, tool.serial, tool.location, tool.notes,
-      tool.setName, tool.size, tax.categoryName(tool.category),
+      tool.setName, tool.size, (tool.sizes || []).join(' '), tax.categoryName(tool.category),
       (tool.tags || []).join(' '),
       (tool.capabilities || []).map(tax.capabilityName).join(' '),
       (tool.accepts || []).concat(tool.fits || []).map(tax.interfaceName).join(' ')
@@ -173,7 +175,7 @@
 
   /* CSV round-trip: one row per tool, list fields pipe-separated. */
   model.CSV_COLUMNS = ['name', 'brand', 'modelNumber', 'category', 'status', 'condition',
-    'powerSource', 'platform', 'quantity', 'size', 'setName', 'location', 'purchaseDate',
+    'powerSource', 'platform', 'quantity', 'size', 'sizes', 'setName', 'location', 'purchaseDate',
     'price', 'currency', 'serial', 'tags', 'capabilities', 'accepts', 'fits', 'notes'];
 
   model.toCsvRow = function (tool) {
@@ -191,7 +193,7 @@
       header.forEach(function (column, index) {
         const value = (row[index] || '').trim();
         if (!value) return;
-        raw[column] = ['tags', 'capabilities', 'accepts', 'fits'].indexOf(column) >= 0
+        raw[column] = ['tags', 'capabilities', 'accepts', 'fits', 'sizes'].indexOf(column) >= 0
           ? value.split(/[|;]/).map(function (s) { return s.trim(); }).filter(Boolean)
           : value;
       });

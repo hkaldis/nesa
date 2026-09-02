@@ -26,13 +26,16 @@
       ],
       "fits": [],
       "location": "",
-      "notes": "Art. 4933500555. Suffix -0X = bare tool in case, no battery included.",
+      "notes": "Art. 4933500555 (also listed as 4933464799). Bare tool in case. Tool-less blade change, bevel detents at 0/15/30/45°, LED and blower. Supplied with blade, dust adapter, splinter guard.",
       "id": "mw-fbjs",
       "name": "M18 FUEL jigsaw (barrel grip)",
       "brand": "Milwaukee",
       "modelNumber": "M18 FBJS-0X",
       "category": "jigsaw",
-      "platform": "milwaukee-m18"
+      "platform": "milwaukee-m18",
+      "photoFiles": [
+        "photos/mw-jigsaw.jpg"
+      ]
     },
     {
       "status": "owned",
@@ -60,13 +63,16 @@
       ],
       "fits": [],
       "location": "",
-      "notes": "Art. 4933479860 / 3990387. Suffix -502X = kit with 2 x 5.0Ah batteries, charger and case (recorded as separate items).",
+      "notes": "Art. 4933479860 / 3990387. Gen 4 FUEL, 158 Nm, 13 mm metal chuck, 175 mm long, 0-33,000 bpm. The -502X kit adds 2 x 5.0Ah batteries, the M12-18 charger and an HD box, recorded separately.",
       "id": "mw-fpd3",
       "name": "M18 FUEL combi drill (percussion)",
       "brand": "Milwaukee",
       "modelNumber": "M18 FPD3-502X",
       "category": "hammer-drill",
-      "platform": "milwaukee-m18"
+      "platform": "milwaukee-m18",
+      "photoFiles": [
+        "photos/mw-fpd3.jpg"
+      ]
     },
     {
       "status": "owned",
@@ -90,7 +96,10 @@
       "brand": "Milwaukee",
       "modelNumber": "M18 B5",
       "category": "battery",
-      "platform": "milwaukee-m18"
+      "platform": "milwaukee-m18",
+      "photoFiles": [
+        "photos/mw-b5.jpg"
+      ]
     },
     {
       "status": "owned",
@@ -107,14 +116,19 @@
         "mains:230v"
       ],
       "fits": [
-        "battery:milwaukee-m18"
+        "battery:milwaukee-m18",
+        "battery:milwaukee-m12"
       ],
       "location": "",
-      "notes": "Supplied with the M18 FPD3-502X kit. If it is an M12-18 dual charger, edit it and add Milwaukee M12 to its Fits list — that is what tells the app your M12 platform has a charger.",
+      "notes": "Supplied with the M18 FPD3-502X kit, which ships the M12-18 dual charger — so it charges the M12 battery as well as the M18 packs. Corrected from an earlier M18-only guess.",
       "id": "mw-fpd3-charger",
-      "name": "Charger (M18 kit)",
+      "name": "M12-18C charger (M12 and M18)",
       "brand": "Milwaukee",
-      "category": "charger"
+      "category": "charger",
+      "photoFiles": [
+        "photos/mw-charger.jpg"
+      ],
+      "modelNumber": "M12-18C"
     },
     {
       "status": "owned",
@@ -138,7 +152,10 @@
       "brand": "Milwaukee",
       "modelNumber": "M12B6",
       "category": "battery",
-      "platform": "milwaukee-m12"
+      "platform": "milwaukee-m12",
+      "photoFiles": [
+        "photos/mw-m12b6.jpg"
+      ]
     },
     {
       "status": "owned",
@@ -162,13 +179,16 @@
       ],
       "fits": [],
       "location": "",
-      "notes": "Art. 4933464618 / 3902787. Suffix -0 = bare tool, no battery included. Takes 76 mm (3\") cutting discs.",
+      "notes": "Art. 4933464618 / 3902787. Bare tool, no battery. 76 mm disc, 10 mm bore, 20,000 rpm, 970 g. Supplied with diamond, carbide and metal cut-off wheels, guard and dust shoe.",
       "id": "mw-fcot",
       "name": "M12 FUEL cut-off tool 76 mm",
       "brand": "Milwaukee",
       "modelNumber": "M12 FCOT-0",
       "category": "angle-grinder",
-      "platform": "milwaukee-m12"
+      "platform": "milwaukee-m12",
+      "photoFiles": [
+        "photos/mw-fcot.jpg"
+      ]
     },
     {
       "status": "owned",
@@ -472,7 +492,10 @@
       "id": "mw-hex-adapters",
       "name": "Shockwave socket adapter set, 3 pcs",
       "brand": "Milwaukee",
-      "category": "drive-adapter"
+      "category": "drive-adapter",
+      "photoFiles": [
+        "photos/mw-adapters.jpg"
+      ]
     },
     {
       "status": "owned",
@@ -492,12 +515,28 @@
         "drive:1/2"
       ],
       "location": "",
-      "notes": "Metric impact sockets, 1/2\" square drive. Recorded as 12-24 mm from Milwaukee's 13-piece metric set — check the actual sizes on yours and correct the range, the gap finder reads it.",
+      "notes": "Art. 4932480456. Ten 6-point impact sockets plus a universal joint and a 1/4\" hex adaptor. Sizes are itemised, so the gap finder correctly reports 11, 16, 18 and 20 mm as absent rather than assuming the whole 10-24 mm span is covered.",
       "id": "mw-sockets13",
       "name": "Shockwave impact sockets 1/2\", 13 pcs",
       "brand": "Milwaukee",
       "category": "socket",
-      "sizeRange": "12-24mm"
+      "sizeRange": "",
+      "photoFiles": [
+        "photos/mw-sockets13.jpg"
+      ],
+      "modelNumber": "4932480456",
+      "sizes": [
+        "10mm",
+        "12mm",
+        "13mm",
+        "14mm",
+        "15mm",
+        "17mm",
+        "19mm",
+        "21mm",
+        "22mm",
+        "24mm"
+      ]
     },
     {
       "status": "owned",
@@ -596,11 +635,11 @@
       "accepts": [],
       "fits": [],
       "location": "",
-      "notes": "All-in-one line laser with a removable 2 m tape measure, for hanging pictures, shelves and mirrors. Levels at 0/90/180/270°, accuracy ±0.3°. Your listing states a green beam and 1.7 m working range; Bosch's own sheets list 2.2 m and a 630-650 nm (red) diode, so check which version you have.",
+      "notes": "Art. 0603663A00. Line laser with an integrated 1.5 m tape measure. Laser line working range 1.7 m, accuracy ±0.3°, levels at 0/90/180/270°, 1x AA, 260 g. Bosch specify a 630-650 nm diode (red, laser class 2) — the \"green\" in the retail listing is the green LED level indicators, not the beam.",
       "id": "bosch-atino",
       "name": "Atino line laser with tape measure",
       "brand": "Bosch",
-      "modelNumber": "Atino",
+      "modelNumber": "0603663A00",
       "category": "level"
     },
     {
@@ -652,7 +691,10 @@
       "name": "Safety over-glasses, clear",
       "brand": "Milwaukee",
       "modelNumber": "4932493439",
-      "category": "ppe"
+      "category": "ppe",
+      "photoFiles": [
+        "photos/mw-glasses.jpg"
+      ]
     },
     {
       "status": "owned",
@@ -675,7 +717,10 @@
       "name": "MG 400 cartridge / silicone gun",
       "brand": "Wolfcraft",
       "modelNumber": "4354000",
-      "category": "caulk-gun"
+      "category": "caulk-gun",
+      "photoFiles": [
+        "photos/wolfcraft-mg400.jpg"
+      ]
     },
     {
       "status": "owned",

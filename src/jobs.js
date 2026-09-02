@@ -31,7 +31,10 @@
       const inRange = range && range.system === wanted.system &&
         wanted.value >= range.min - 1e-9 && wanted.value <= range.max + 1e-9;
       const exact = size && size.system === wanted.system && Math.abs(size.value - wanted.value) < 1e-9;
-      if (!exact && !inRange) return false;
+      const listed = (tool.parsedSizes || []).some(function (parsed) {
+        return parsed.system === wanted.system && Math.abs(parsed.value - wanted.value) < 1e-9;
+      });
+      if (!exact && !inRange && !listed) return false;
     }
     return true;
   };

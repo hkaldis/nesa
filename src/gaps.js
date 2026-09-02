@@ -49,6 +49,11 @@
       if (tool.category !== series.category) return;
       const single = tool.parsedSize || util.parseSize(tool.size);
       if (single && single.system === series.system) held.push(single.value);
+      // An itemised set contributes exactly what it lists, so the sizes it
+      // skips still register as gaps.
+      (tool.parsedSizes || []).forEach(function (parsed) {
+        if (parsed.system === series.system) held.push(parsed.value);
+      });
       const range = jobsApi.parseRange(tool.sizeRange);
       if (range && range.system === series.system) {
         series.sizes.forEach(function (size) {
