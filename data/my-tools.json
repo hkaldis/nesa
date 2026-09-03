@@ -221,7 +221,7 @@
     {
       "status": "owned",
       "condition": "new",
-      "powerSource": "cordless",
+      "powerSource": "built-in battery",
       "quantity": 1,
       "currency": "EUR",
       "photos": [],
@@ -235,7 +235,7 @@
       "accepts": [],
       "fits": [],
       "location": "",
-      "notes": "8000 lumens, 420 m throw. Built-in 8000 mAh li-ion, 18 W USB-C charging (~2 h full). Runtime 30 h low / 190 h ultralow. OLED display. Stainless steel, IP54, 199 g.",
+      "notes": "8000 lumens, 420 m throw. Built-in 8000 mAh li-ion, 18 W USB-C charging (~2 h full). Runtime 30 h low / 190 h ultralow. OLED display. Stainless steel, IP54, 199 g. Battery is built in and not user-swappable.",
       "id": "nitecore-edc37",
       "name": "EDC37 flashlight 8000 lumens",
       "brand": "Nitecore",
@@ -542,7 +542,7 @@
     {
       "status": "owned",
       "condition": "new",
-      "powerSource": "cordless",
+      "powerSource": "built-in battery",
       "quantity": 1,
       "currency": "EUR",
       "photos": [],

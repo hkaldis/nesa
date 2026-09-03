@@ -566,7 +566,7 @@
 
   const CONDITIONS = ['new', 'good', 'worn', 'needs repair', 'broken'];
   const STATUSES = ['owned', 'wishlist', 'lent out', 'sold', 'lost'];
-  const POWER_SOURCES = ['manual', 'cordless', 'corded', 'pneumatic', 'petrol', 'hydraulic'];
+  const POWER_SOURCES = ['manual', 'cordless', 'built-in battery', 'corded', 'pneumatic', 'petrol', 'hydraulic'];
 
   App.taxonomy = {
     CATEGORIES: CATEGORIES,
