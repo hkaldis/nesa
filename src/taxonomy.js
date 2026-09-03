@@ -20,7 +20,8 @@
       { id: 'driver-bit', name: 'Driver Bit', accessory: true },
       { id: 'hole-saw', name: 'Hole Saw', accessory: true },
       { id: 'drill-guide', name: 'Drill Guide / Depth Stop', accessory: true },
-      { id: 'bit-holder', name: 'Bit Holder', accessory: true, adapter: true }
+      { id: 'bit-holder', name: 'Bit Holder', accessory: true, adapter: true },
+      { id: 'angle-adapter', name: 'Right-Angle / Offset Adapter', accessory: true, adapter: true }
     ] },
     { id: 'fastening', name: 'Fastening & Torque', children: [
       { id: 'ratchet', name: 'Ratchet' },

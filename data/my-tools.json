@@ -445,23 +445,24 @@
       "photos": [],
       "tags": [
         "milwaukee",
-        "shockwave",
-        "accessory"
+        "accessory",
+        "confined-space"
       ],
       "capabilities": [],
       "accepts": [
         "shank:hex-1/4"
       ],
       "fits": [
+        "chuck:13mm",
         "shank:hex-1/4"
       ],
       "location": "",
-      "notes": "Impact-duty magnetic holder for 1/4\" hex insert bits.",
+      "notes": "Art. 4932352320. Offset/right-angle attachment for driving and drilling in restricted spaces. 160 mm long, 51 mm head height, up to 40 Nm and 1750 rpm. Two-step shaft fits a 1/4\" (6 mm) or 10 mm hex holder, or the drill chuck. 360° soft-grip side handle with 4 lock positions. 1/4\" magnetic bit reception (C 6.3 and E 6.3) with bit lock. Previously miscatalogued here as a magnetic bit holder.",
       "id": "mw-bitholder",
-      "name": "Shockwave magnetic bit holder",
+      "name": "OSD2 offset / right-angle drill & driver adapter",
       "brand": "Milwaukee",
-      "modelNumber": "4932352320",
-      "category": "bit-holder",
+      "modelNumber": "OSD2 (4932352320)",
+      "category": "angle-adapter",
       "photoFiles": [
         "photos/mw-bitholder.jpg"
       ]
